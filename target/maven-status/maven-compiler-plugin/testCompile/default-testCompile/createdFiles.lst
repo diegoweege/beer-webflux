@@ -1,6 +1,0 @@
-br\com\beer\webflux\beerwebflux\repository\BeerRepository.class
-br\com\beer\webflux\beerwebflux\domain\Beer.class
-br\com\beer\webflux\beerwebflux\domain\BeerType.class
-br\com\beer\webflux\beerwebflux\BeerWebfluxApplicationTests.class
-br\com\beer\webflux\beerwebflux\controller\BeerController.class
-br\com\beer\webflux\beerwebflux\service\BeerService.class
