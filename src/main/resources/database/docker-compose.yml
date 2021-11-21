@@ -1,8 +1,14 @@
 version: '3'
 
 services: 
-  oracle-db:
-    image: oracleinanutshell/oracle-xe-11g:latest
+  db:
+    image: oracle/database:18.4.0-xe
     ports:
       - 1521:1521
       - 5500:5500
+    environment:
+      ORACLE_PWD: oracle
+    volumes:
+      - db-data:/opt/oracle/oradata
+volumes:
+  db-data:

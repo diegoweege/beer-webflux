@@ -9,5 +9,4 @@ class BeerWebfluxApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
