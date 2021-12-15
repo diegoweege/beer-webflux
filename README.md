@@ -1,10 +1,19 @@
-# Projeto de teste com conexão ao Oracle com Spring MVC
+# Projeto de teste com conexão ao Oracle com Webflux
 
-- Para subir um container do Docker com uma instância do Oracle, acessar a pasta `resources/database` e rodar o comando `docker-compose up -d`
+## Criar imagem docker (oracle/database:18.4.0-xe)
+```sh
+git clone https://github.com/oracle/docker-images.git
+cd docker-images/OracleDatabase/SingleInstance/dockerfiles
+./buildContainerImage.sh -v 18.4.0 -t oracle/database:18.4.0-xe -x -i
+```
 
+## Provisionar ambiente
+- Acessar a pasta `resources/database` e executar o comando `docker-compose up -d`.
+- Aguardar até o database estar pronto (`docker-compose logs -f`).
+- Em um client sql, conectar em `localhost:1521/xe` com `user: system` e `password: oracle`.
 - Na versão inicial não foi adicionada a integração com o liquibase. Segue comandos para criar a tabela inicial com alguns registros:
 
-``
+```
 create table beer(
     id NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
     name VARCHAR2(50) NOT NULL,
@@ -14,7 +23,7 @@ create table beer(
     url_image VARCHAR2(100),
     PRIMARY KEY(id)
 );
-``
+```
 
 - Exemplo de chamada para salvar uma nova cerveja:
 ````
@@ -32,5 +41,5 @@ curl --location --request POST 'http://localhost:8080/beer' \
 - Exemplo de chamada para listar as cervejas da base:
 
 ````
-curl --location --request GET 'http://localhost:8081/beer'
+curl --location --request GET 'http://localhost:8080/beer'
 ````
