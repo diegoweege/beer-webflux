@@ -1,28 +1,25 @@
-package br.com.beer.webflux.beerwebflux.domain;
+package br.com.beer.webflux.beerwebflux.request;
 
 import java.math.BigDecimal;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-
+import br.com.beer.webflux.beerwebflux.domain.BeerType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Beer {
+@ToString(exclude = "image")
+public class BeerRequest {
 
-    @Id
-    private Long id;
     private String name;
     private BeerType type;
     private BigDecimal value;
     private Double content;
+    private byte[] image;
 
-    @Column("url_image")
-    private String urlImage;
 }

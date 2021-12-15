@@ -6,3 +6,12 @@ spring:
     url: r2dbc:oracle://localhost:1521/xe
     username: system
     password: oracle
+  application:
+    name: beer-webflux
+
+server:
+  port: 8081
+
+client:
+  file-upload:
+    url: http://localhost:8082
