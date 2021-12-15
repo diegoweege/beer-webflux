@@ -27,7 +27,7 @@ create table beer(
 
 - Exemplo de chamada para salvar uma nova cerveja:
 ````
-curl --location --request POST 'http://localhost:8080/beer' \
+curl --location --request POST 'http://localhost:8081/beer' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Heineken",
@@ -41,5 +41,5 @@ curl --location --request POST 'http://localhost:8080/beer' \
 - Exemplo de chamada para listar as cervejas da base:
 
 ````
-curl --location --request GET 'http://localhost:8080/beer'
+curl --location --request GET 'http://localhost:8081/beer'
 ````
