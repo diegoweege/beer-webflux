@@ -22,9 +22,25 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.r2dbc</groupId>-->
+<!--			<artifactId>r2dbc-pool</artifactId>-->
+<!--			<version>0.9.0.M2</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>com.oracle.database.r2dbc</groupId>-->
+<!--			<artifactId>oracle-r2dbc</artifactId>-->
+<!--			<version>0.3.0</version>-->
+<!--		</dependency>-->
 		<dependency>
-			<groupId>com.oracle.database.r2dbc</groupId>
-			<artifactId>oracle-r2dbc</artifactId>
+			<groupId>io.r2dbc</groupId>
+			<artifactId>r2dbc-postgresql</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.23</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

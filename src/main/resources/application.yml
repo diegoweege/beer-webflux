@@ -3,9 +3,9 @@ logging:
     org.springframework.r2dbc: DEBUG
 spring:
   r2dbc:
-    url: r2dbc:oracle://localhost:1521/xe
-    username: system
-    password: oracle
+    url: r2dbc:pool:postgresql://localhost:5432/beer?initialSize=1&maxIdleTime=PT60S
+    username: postgres
+    password: 1234
   application:
     name: beer-webflux
 
